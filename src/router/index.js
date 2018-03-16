@@ -15,8 +15,6 @@ import account from './account'
 
 import Picklanguage from '../pages/Picklanguage'
 import Guidepage from '../pages/Guidepage'
-import Funding from '@/pages/Funding.vue'
-import PinLock from '@/pages/PinLock'
 
 Vue.use(Router)
 
@@ -74,7 +72,7 @@ const router = new Router({
     {
       path: '/funding',
       name: 'Funding',
-      component: Funding
+      component: resolve => require(['../pages/Funding.vue'], resolve)
     },
     {
       path: '/history',
@@ -91,7 +89,7 @@ const router = new Router({
     {
       path: '/pinlock',
       name: 'PinLock',
-      component: PinLock
+      component: resolve => require(['../pages/PinLock'], resolve)
     },
 
     mysettings,
